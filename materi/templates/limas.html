@@ -1,0 +1,347 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNTIRTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+
+<body>
+    <!--bagian navbar-->
+    <nav class="navbar navbar-expand-lg" style="background-color:#4d3a26;">
+      <div class="container-fluid">
+        <img src="{% static 'logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'index' %} active {% endif %}" aria-current="page" href="{% url 'index' %}" style="color:	#FFFFFF">UNTIRTA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'home' %} active {% endif %}" href="{% url 'home' %}" style="color:	#FFFFFF">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Bangun Ruang Sisi Datar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kubus' %} active {% endif %}" href="{% url 'kubus' %}" style="color:	#000000">Kubus</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'balok' %} active {% endif %}" href="{% url 'balok' %}" style="color:	#000000">Balok</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'prisma' %} active {% endif %}" href="{% url 'prisma' %}" style="color:	#000000">Prisma</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'limas' %} active {% endif %}" href="{% url 'limas' %}" style="color:	#000000">Limas</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkubus' %} active {% endif %}" href="{% url 'appletkubus' %}" style="color:	#000000">Applet Kubus</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Kesebangunan dan Kekongruenan
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kesebangunan' %} active {% endif %}" href="{% url 'kesebangunan' %}" style="color:	#000000">Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'kekongruenan' %} active {% endif %}" href="{% url 'kekongruenan' %}" style="color:	#000000">Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikesebangunan' %} active {% endif %}" href="{% url 'aplikasikesebangunan' %}" style="color:	#000000">Aplikasi Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikekongruenan' %} active {% endif %}" href="{% url 'aplikasikekongruenan' %}" style="color:	#000000">Aplikasi Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkekongruenan' %} active {% endif %}" href="{% url 'appletkekongruenan' %}" style="color:	#000000">Applet Kekongruenan</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Transformasi Geometri
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'translasi' %} active {% endif %}" href="{% url 'translasi' %}" style="color:	#000000">Translasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'rotasi' %} active {% endif %}" href="{% url 'rotasi' %}" style="color:	#000000">Rotasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'refleksi' %} active {% endif %}" href="{% url 'refleksi' %}" style="color:	#000000">Refleksi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'dilatasi' %} active {% endif %}" href="{% url 'dilatasi' %}" style="color:	#000000">Dilatasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'applettranslasi' %} active {% endif %}" href="{% url 'applettranslasi' %}" style="color:	#000000">Applet Translasi</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Lingkaran
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'lingkaran' %} active {% endif %}" href="{% url 'lingkaran' %}" style="color:	#000000">Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaanlingkaran' %} active {% endif %}" href="{% url 'persamaanlingkaran' %}" style="color:	#000000">Persamaan Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaangarissinggung' %} active {% endif %}" href="{% url 'persamaangarissinggung' %}" style="color:	#000000">Persamaan Garis Singgung</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletlingkaran' %} active {% endif %}" href="{% url 'appletlingkaran' %}" style="color:	#000000">Applet Lingkaran</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'about' %} active {% endif %}" href="{% url 'about' %}" style="color:#FFFFFF"">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'mahasiswa' %} active {% endif %}" href="{% url 'mahasiswa' %}" style="color:	#FFFFFF">Data Mahasiswa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!--penutup navbar-->
+
+      <link rel="stylesheet" href="{% static 'css/body.css' %}">
+
+      <br></br>
+      <section class="container">
+          <center>
+      <font size="6"><strong>BAB 4
+      <p>LIMAS</p>
+      </strong></font>
+        <iframe style="width: 400px;height: 290px;"type="text/html" src="https://www.youtube.com/embed/t8skvVM7bss?autoplay=1&origin=wibloog.com" frameborder="5"></iframe>
+        <iframe style="width: 400px;height: 290px;"type="text/html" src="https://www.youtube.com/embed/i07GkT4kqjw?autoplay=1&origin=wibloog.com" frameborder="5"></iframe>
+      </center>
+      <font size="5">
+      <ol>
+        <p>Limas adalah bangun ruang tiga dimensi yang dibatasi oleh alas berbentuk segi-n dan sisi-sisi tegak berbentuk segitiga.</p>
+      </ol>
+      <br>
+      <h3><strong>A. Macam-macam Limas</strong></h3>
+      <ol>
+            <li>1. Limas Segitiga</li>
+            <img src="https://i.postimg.cc/QMFtp1L9/limas-segitiga.png" width ="230px" height="203px">
+          <p>Limas segitiga adalah limas yang memiliki alas berbentuk segitiga, baik segitiga sama sisi, segitiga sama kaki, mau pun segitiga siku-siku. Limas segitiga memiliki sisi selimut yang juga berbentuk segitiga.</p>
+          <br>
+            <li>2. Limas Segiempat</li>
+            <img src="https://i.postimg.cc/9fsf10Vx/limas-segiempat.png" width ="260px" height="235px">
+          <p>Limas segi empat adalah limas yang memiliki alas berbentuk segi empat, yaitu : persegi, persegi panjang, jajaran genjang, trapesium, belah ketupat, dan layang-layang. Macam-macam limas segi empat memiliki sisi selimut yang berbentuk segitiga.</li>
+            <br>
+            <br>
+        <li>3. Limas Segilima</li>
+            <img src="https://i.postimg.cc/fLXRPsRM/limas-segilima.png" width ="260px" height="265px">
+          <p>Limas segilima adalah limas yang memiliki alas berbentuk segi lima dan memiliki sisi selimut yang berbentuk segitiga.</p>
+          <br>
+            <li>4. Limas Segienam</li>
+            <img src="https://i.postimg.cc/fyNRnPVm/limas-segienam.png" width ="220px" height="168px">
+          <p>Limas segi enam adalah limas yang memiliki alas berbentuk segi enam dan memiliki sisi selimut yang berbentuk segitiga.</p>
+        </ol>
+    
+    <br>
+        <h3><strong>B. Unsur-unsur Limas</strong></h3>
+      <ol>
+            <li>1. Bidang atau Sisi</li>
+              <p>Bidang atau sisi adalah bangun datar yang membentuk bangun ruang.</p>
+            <ul>
+                      <li>a. Limas segitiga memiliki 4 bidang atau sisi. Pada gambar 5.1 bidang atau sisi pada limas segitiga, yaitu : Sisi alas (ABC), Sisi tegak (ADB, BDC, CDA).</li>
+                      <li>b. Limas segiempat memiliki 5 bidang atau sisi. Pada gambar 5.2 bidang atau sisi pada limas segiempat, yaitu : Sisi alas (ABCD), Sisi tegak (AEB, BEC, CED, DEA).</li>
+                      <li>c. Limas segilima memiliki 6 bidang atau sisi. Pada gambar 5.3 bidang atau sisi pada limas segilima, yaitu : Sisi alas (ABCDE), Sisi tegak (ATB, BTC, CTD, DTE, ETA).</li>
+                      <li>d. Limas segienam memiliki 7 bidang atau sisi. Pada gambar 5.4 bidang atau sisi pada limas segienam, yaitu : Sisi alas (ABCDEF), Sisi tegak (ATB, BTC, CTD, DTE, ETF, FTA).</li>
+                  </ul>
+                  <br>
+            <li>2. Rusuk</li>
+              <p>Rusuk adalah garis lurus pada tiap tepi.</p>
+            <ul>
+                      <li>a. Limas segitiga memiliki 6 rusuk. Pada gambar 5.1 rusuk pada limas segitiga, yaitu : Rusuk alas (AB, BC, CA), Rusuk tegak (AD, BD, CD).</li>
+                      <li>b. Limas segiempat memilki 8 rusuk. Pada gambar 5.2 rusuk pada limas segiempat, yaitu : Rusuk alas (AB, BC, CD, DA), Rusuk tegak (AE, BE, CE, DE).</li>
+                      <li>c. Limas segilima memiliki 10 rusuk. Pada gambar 5.3 rusuk pada limas segilima, yaitu : Rusuk alas (AB, BC, CD, DE, EA), Rusuk tegak (AT, BT, CT, DT, ET).</li>
+                      <li>d. Limas segienam memiliki 12 rusuk. Pada gambar 5.4 rusuk pada limas segienam, yaitu : Rusuk alas (AB, BC, CD, DE, EF, FA), Rusuk tegak (AT, BT, CT, DT, ET, FT).</li>
+                  </ul>    
+                  <br>
+            <li>3. Titik Sudut</li>
+              <p>Titik sudut adalah titik potong yang berada diantara dua rusuk.</p>
+            <ul>
+                      <li>a. Limas segitiga memiliki 4 titik sudut. Pada gambar 5.1 titik sudut pada limas segitiga, yaitu : A, B, C dan D.</li>
+                      <li>b.Limas segiempat memiliki 5 titik sudut. Pada gambar 5.2 titik sudut pada limas segiempat, yaitu : A, B, C, D dan E.</li>
+                      <li>c. Limas segilima memiliki 6 titik sudut. Pada gambar 5.3 titik sudut pada limas segilima, yaitu : A, B, C, D, E dan T.</li>
+                      <li>d. Limas segienam memiliki 7 titik sudut. Pada gambar 5.4 titik sudut pada limas segienam, yaitu : A, B, C, D, E, F dan T.</li>
+                    </ul>
+        </ol>
+    
+    <br>
+        <h3><strong>C. Sifat-sifat Limas</strong></h3>
+      <ol>
+        <li>1. Sifat-sifat Limas Segitiga</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Limas Segitiga</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Limas segitiga memiliki 4 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABC), Sisi tegak (ADB, BDC, CDA).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Limas segitiga memiliki 6 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CA), Rusuk tegak (AD, BD, CD).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Limas segitiga memiliki 4 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C dan D.</td>
+          </tr>
+          </table>
+          <br>
+        <li>2. Sifat-sifat Limas Segiempat</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Limas Segiempat</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Limas segiempat memiliki 5 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABCD), Sisi tegak (AEB, BEC, CED, DEA).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Limas segiempat memiliki 8 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CD, DA), Rusuk tegak (AE, BE, CE, DE).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Limas segiempat memiliki 5 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D dan E.</td>
+          </tr>
+          </table>
+          <br>
+        <li>3. Sifat-sifat Limas Segilima</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Limas Segilima</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Limas segilima memiliki 6 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABCDE), Sisi tegak (ATB, BTC, CTD, DTE, ETA).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Limas segilima memiliki 10 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CD, DE, EA), Rusuk tegak (AT, BT, CT, DT, ET).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Limas segilima memiliki 6 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D, E dan T..</td>
+          </tr>
+          </table>
+          <br>
+        <li>4. Sifat-sifat Limas Segienam</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Limas Segienam</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Limas segienam memiliki 7 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABCDEF), Sisi tegak (ATB, BTC, CTD, DTE, ETF, FTA).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Limas segienam memiliki 12 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CD, DE, EF, FA), Rusuk tegak (AT, BT, CT, DT, ET, FT).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Limas segienam memiliki 7 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D, E, F dan T.</td>
+          </tr>
+          </table>
+      </ol>
+    
+    <br>
+      <h3><strong>D. Luas Permukaan Limas</strong></h3>
+      <ol>
+        <p>Luas permukaan dapat ditentukan dengan menjumlahkan luas sisi-sisi tegak dengan sisi alas. Maka rumus luas permukaan limas adalah L = jumlah luas sisi tegak + luas alas.</p>
+        <p>
+          Luas Permukaan Limas = jumlah luas sisi tegak + luas alas
+        </p>
+      </ol>
+    
+    <br>
+      <h3><strong>E. Volume Limas</strong></h3>
+      <ol>
+        <p>Volume limas dapat ditentukan membelah sebuah kubus berisi r menjadi 6 buah limas yang kongruen. Maka rumus volume adalah V = 1/3 x luas alas x tinggi.</p>
+        <p>
+          Volume Limas = 1/3 x luas alas x tinggi
+        </p>
+      </ol> 
+    
+    <br>
+      <h3><strong>F. Jaring-jaring Limas</strong></h3>
+      <ol>
+        <p>Jaring-jaring limas adalah pembelahan sebuah bangun ruang limas menjadi beberapa bangun datar yang saling berkaitan. Dan apabila bangun datar yag berkaitkan digabungkan maka akan menjadi suatu bangun ruang yang dinamakan limas.</p>
+        <li>1. Jaring-jaring Limas Segitiga</li>
+          <img src="https://i.postimg.cc/Nj7VpzcZ/Jaring-jaring-Limas-Segitiga.jpg" width ="280px" height="273px">
+          <br>
+        <li>2. Jaring-jaring Limas Segiempat</li>
+          <img src="https://i.postimg.cc/rpVHbNys/Jaring-jaring-Limas-Segiempat.jpg" width ="280px" height="278px">
+          <br>
+        <li>3. Jaring-jaring Limas Segilima</li>
+          <img src="https://i.postimg.cc/qBzP4wsC/Jaring-jaring-Limas-Segilima.jpg" width ="280px" height="277px">
+          <br>
+        <li>4. Jaring-jaring Limas Segienam</li>
+          <img src="https://i.postimg.cc/4Ncjh3Ff/Jaring-jaring-Limas-Segienam.jpg" width ="280px" height="270px">
+      </ol>
+    
+    <br>
+      <h3><strong>G. Ringkasan Limas</strong></h3>
+      <ol>
+        <p>Limas adalah bangun ruang yang hanya memiliki sisi alas dan diselimuti oleh beberapa sisi tegak yang berbentuk segitiga serta memiliki titik puncak. Nama dari limas tergantung dari alas limas.</p>
+        <li>1. Unsur-unsur Limas segi n beraturan</li>
+        <ul>
+          <li>a. Banyak rusuk = (2n) buah.</li>
+          <li>b. Banyak sisi = (n + 1) buah.</li>
+          <li>c. Banyak titik sudut = (n + 1) buah</li>
+        </ul>
+        <br>
+        <li>2. Rumus pada Limas</li>
+        <ul>
+          <li>a. Luas permukaan = luas alas + jumlah luas sisi tegak</li>
+          <li>b. Volume = 1/3 x luas alas x tinggi</li>
+        </ul>
+      </ol>
+    
+    <br>
+      <h3><strong>H. Latihan</strong></h3>
+      <ol>
+        <li>1. Diketahui sebuah limas memiliki alas berbentuk segitiga dengan panjang 9cm dan tingginya 12cm. Jika tinggi limas 15cm, maka volumenya .... cm<sup>3</sup></li>
+        <br>
+        <li>2. Sebuah limas segitiga sama sisi mempunyai sisi alas 12cm dan tinggi alas 8cm. Jika tinggi sisi tegak segitiga selimut adalah 20cm, maka luas permukaan limas tersebut ....  cm<sup>2</sup></li>
+        <br>
+        <li>3. Sebuah limas segi empat memiliki alas berbentuk persegi dengan panjang sisi 50cm. Jika tinggi sisi tegak 75cm, maka luas permukaannya ....  cm<sup>2</sup></li>
+        <br>
+        <li>4. Sebuah limas segi lima memiliki tinggi 60cm dan luas alas dengan 200cm<sup>3</sup>. Hitunglah volume dari limas dengan menggunakan rumus yang telah ditentukan.</li>
+        <br>
+        <li>5. Diketahui sebuah bangun limas persegi mempunyai tinggi sisi tegak limas 20cm dan panjang diagonal alas limas 16cm. Carilah tinggi limas segi empat tersebut!</li>
+      </ol>
+      </font> 
+      </section>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      </body>
+    </html>

@@ -1,0 +1,349 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNTIRTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+
+<body>
+    <!--bagian navbar-->
+    <nav class="navbar navbar-expand-lg" style="background-color:#4d3a26;">
+      <div class="container-fluid">
+        <img src="{% static 'logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'index' %} active {% endif %}" aria-current="page" href="{% url 'index' %}" style="color:	#FFFFFF">UNTIRTA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'home' %} active {% endif %}" href="{% url 'home' %}" style="color:	#FFFFFF">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Bangun Ruang Sisi Datar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kubus' %} active {% endif %}" href="{% url 'kubus' %}" style="color:	#000000">Kubus</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'balok' %} active {% endif %}" href="{% url 'balok' %}" style="color:	#000000">Balok</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'prisma' %} active {% endif %}" href="{% url 'prisma' %}" style="color:	#000000">Prisma</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'limas' %} active {% endif %}" href="{% url 'limas' %}" style="color:	#000000">Limas</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkubus' %} active {% endif %}" href="{% url 'appletkubus' %}" style="color:	#000000">Applet Kubus</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Kesebangunan dan Kekongruenan
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kesebangunan' %} active {% endif %}" href="{% url 'kesebangunan' %}" style="color:	#000000">Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'kekongruenan' %} active {% endif %}" href="{% url 'kekongruenan' %}" style="color:	#000000">Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikesebangunan' %} active {% endif %}" href="{% url 'aplikasikesebangunan' %}" style="color:	#000000">Aplikasi Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikekongruenan' %} active {% endif %}" href="{% url 'aplikasikekongruenan' %}" style="color:	#000000">Aplikasi Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkekongruenan' %} active {% endif %}" href="{% url 'appletkekongruenan' %}" style="color:	#000000">Applet Kekongruenan</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Transformasi Geometri
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'translasi' %} active {% endif %}" href="{% url 'translasi' %}" style="color:	#000000">Translasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'rotasi' %} active {% endif %}" href="{% url 'rotasi' %}" style="color:	#000000">Rotasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'refleksi' %} active {% endif %}" href="{% url 'refleksi' %}" style="color:	#000000">Refleksi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'dilatasi' %} active {% endif %}" href="{% url 'dilatasi' %}" style="color:	#000000">Dilatasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'applettranslasi' %} active {% endif %}" href="{% url 'applettranslasi' %}" style="color:	#000000">Applet Translasi</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Lingkaran
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'lingkaran' %} active {% endif %}" href="{% url 'lingkaran' %}" style="color:	#000000">Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaanlingkaran' %} active {% endif %}" href="{% url 'persamaanlingkaran' %}" style="color:	#000000">Persamaan Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaangarissinggung' %} active {% endif %}" href="{% url 'persamaangarissinggung' %}" style="color:	#000000">Persamaan Garis Singgung</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletlingkaran' %} active {% endif %}" href="{% url 'appletlingkaran' %}" style="color:	#000000">Applet Lingkaran</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'about' %} active {% endif %}" href="{% url 'about' %}" style="color:#FFFFFF"">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'mahasiswa' %} active {% endif %}" href="{% url 'mahasiswa' %}" style="color:	#FFFFFF">Data Mahasiswa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!--penutup navbar-->
+
+      <link rel="stylesheet" href="{% static 'css/body.css' %}">
+
+      <br></br>
+      <section class="container">
+          <center>
+      <font size="6"><strong>BAB 3
+      <p>PRISMA</p>
+      </strong></font>
+        <iframe style="width: 400px;height: 290px;"type="text/html" src="https://www.youtube.com/embed/t8skvVM7bss?autoplay=1&origin=wibloog.com" frameborder="5"></iframe>
+        <iframe style="width: 400px;height: 290px;"type="text/html" src="https://www.youtube.com/embed/SlHbqzXcqLU?autoplay=1&origin=wibloog.com" frameborder="5"></iframe>
+      </center>
+      <font size="5">
+      <ol>
+        <p>Prisma adalah bangun ruang tiga dimensi yang dibatasi oleh alas dan tutup identik berbentuk segi-n dan sisi-sisi tegak berbentuk persegi atau persegi Panjang.</p>
+      </ol>
+      <br>
+      <h3><strong>A. Macam-macam Prisma</strong></h3>
+      <ol>
+            <li>1. Prisma Segitiga</li>
+            <img src="https://i.postimg.cc/NjwF92Fx/prisma-segitiga.png" width ="230px" height="346px">
+          <p>Prisma segitiga adalah bangun ruang tiga dimensi yang mempunyai bentuk alas dan penutup yang bentuknya segitiga. Prisma ini mempunyai selimut yang bentuknya persegi panjang.</p>
+          <br>
+            <li>2. Prisma Segiempat</li>
+            <img src="https://i.postimg.cc/XNmpWz0m/prisma-segiempat.png" width ="260px" height="272px">
+          <p>Prisma segiempat adalah bangun ruang tiga dimensi yang mempunyai alas serta atap yang bentuknya segi empat dan mempunyai selimut sisi samping yang bentuknya persegi panjang. Prisma ini sering juga disebut sebagai balok.</li>
+    
+            <br>
+            <br>
+            <li>3. Prisma Segilima</li>
+            <img src="https://i.postimg.cc/2SF64jBN/prisma-segilima.png" width ="260px" height="302px">
+          <p>Prisma Segilima adalah bangun ruang tiga dimensi yang mempunyai atap serta alas yang bentuknya segi lima dan mempunyai selimut yang bentuknya persegi panjang pada sisi samping.</p>
+          <br>
+            <li>4. Prisma Segienam</li>
+            <img src="https://i.postimg.cc/15F43rmt/prisma-segienam.png" width ="220px" height="324px">
+          <p>Prisma segienam adalah bangun ruang tiga dimensi yang mempunyai alap serta alas yang bentuknya segi enam, serta mempunyai selimut yang bentuknya adalah persegi panjang pada sisi samping.</p>
+        </ol>
+    
+    <br>
+        <h3><strong>B. Unsur-unsur Prisma</strong></h3>
+      <ol>
+            <li>1. Bidang atau Sisi</li>
+              <p>Bidang atau sisi adalah bangun datar yang membentuk bangun ruang.</p>
+            <ul>
+                      <li>a. Prisma segitiga memiliki 5 bidang atau sisi. Pada gambar 4.1 bidang atau sisi prisma segitiga, yaitu : sisi alas (ABC), sisi atas (DEF), sisi tegak (ABED, BEFC, CADF).</li>
+                      <li>b. Prisma segiempat memiliki 6 bidang atau sisi. Pada gambar 4.2 bidang atau sisi prisma segiempat, yaitu : sisi alas (ABCD), sisi atas (EFGH), sisi tegak (BCGF, CGHD, DHEA, AEFB).</li>
+                      <li>c. Prisma Segilima memiliki 7 bidang atau sisi. Pada gambar 4.3 bidang atau sisi prisma segilima, yaitu : sisi alas (ABCDE), sisi atas (FGHIJ), sisi tegak (BCHG, CDHI, DIJE, EJFA, AFGB).</li>
+                      <li>d. Prisma segienam memiliki 8 bidang atau sisi. Pada gambar 4.4 bidang atau sisi prisma segienam, yaitu : sisi alas (ABCDEF), sisi atas (GHIJKL), sisi tegak (BCIH, CIJD, DJKE, EKLF, FLGA, GAHB).</li>
+                  </ul>
+                  <br>
+            <li>2. Rusuk</li>
+              <p>Rusuk adalah garis lurus pada tiap tepi.</p>
+            <ul>
+                      <li>a. Prisma segitiga memiliki 9 rusuk. Pada gambar 4.1 rusuk prisma segitiga, yaitu : rusuk alas (AB, BC, CA), rusuk atas (DE, EF, FD), rusuk tegak (BE, AD, CF).</li>
+                      <li>b. Prisma segiempat memiliki 12 rusuk. Pada gambar 4.2 rusuk prisma segiempat, yaitu : rusuk alas (AB, BC, CD, DA), rusuk atas (EF, FG, GH, HE), rusuk tegak (BF, CG, DH, AE).</li>
+                      <li>c. Prisma segilima memiliki 15 rusuk. Pada gambar 4.3 rusuk prisma segilima, yaitu : rusuk alas (AB, BC, CD, DE, EA), rusuk atas (FG, GH, HI, IJ, JF), rusuk tegak (AF, BG, CH, DI, EJ).</li>
+                      <li>d. Prisma segienam memiliki 18 rusuk. Pada gambar 4.4 rusuk prisma segienam, yaitu : rusuk alas (AB, BC, CD, DE, EF, FA), rusuk atas (GH, HI, IJ, JK, KL, LG), rusuk tegak (AG, BH, CI, DJ, EK, FL).</li>
+                  </ul> 
+                  <br>   
+            <li>3. Titik Sudut</li>
+              <p>Titik sudut adalah titik potong yang berada diantara dua rusuk.</p>
+            <ul>
+                      <li>a. Prisma segitiga memiliki 6 titik sudut. Pada gambar 4.1 titik sudut prisma segitiga, yaitu : A, B, C, D, E dan F.</li>
+                      <li>b. Prisma segiempat memiliki 8 titik sudut. Pada gambar 4.2 titik sudut prisma segiempat, yaitu : A, B, C, D, E, F G dan H.</li>
+                      <li>c. Prisma segilima memiliki 10 titik sudut. Pada gambar 4.3 titik sudut prisma segilima, yaitu : A, B, C, D, E, F, G, H, I dan J.</li>
+                      <li>d. Prisma segienam memiliki 12 titik sudut. Pada gambar 4.4 titik sudut prisma segienam, yaitu : A, B, C, D, E, F, G, H, I, J, K dan L.</li>
+                    </ul> 
+        </ol>
+    
+    <br>
+        <h3><strong>C. Sifat-sifat Prisma</strong></h3>
+      <ol>
+        <li>1. Sifat-sifat Prisma Segitiga</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Prisma Segitiga</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Prisma segitiga memiliki 5 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABC), Sisi atas (DEF), Sisi tegak (ABED, BEFC, CADF).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Prisma segitiga memiliki 9 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CA), Rusuk atas (DE, EF, FD). Rusuk tegak (BE, AD, CF).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Prisma segitiga memiliki 6 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D, E dan F.</td>
+          </tr>
+          </table>
+          <br>
+        <li>2. Sifat-sifat Prisma Segiempat</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Prisma Segiempat</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Prisma segiempat memiliki 6 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABCD), Sisi atas (EFGH), Sisi tegak (BCGF, CGHD, DHEA, AEFB).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Prisma segiempat memiliki 12 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CD, DA), Rusuk atas (EF, FG, GH, HE), Rusuk tegak (BF, CG, DH, AE).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Prisma segiempat memiliki 8 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D, E, F, G dan H.</td>
+          </tr>
+          </table>
+          <br>
+        <li>3. Sifat-sifat Prisma Segilima</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Prisma Segilima</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Prisma segilima memiliki 7 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (AB, BC, CD, DE, EA), Sisi atas (FG, GH, HI, IJ, JF), Sisi tegak (AF, BG, CH, DI, EJ).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Prisma segilima memiliki 15 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CD, DE, EA), Rusuk atas (FG, GH, HI, IJ, JF), Rusuk tegak (AF, BG, CH, DI, EJ).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Prisma segilima memiliki 10 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D, E, F, G, H, I dan J.</td>
+          </tr>
+          </table>
+          <br>
+        <li>4. Sifat-sifat Prisma Segienam</li>
+          <table border="3" cellpadding="10">
+          <tr bgcolor="dodgerblue">
+            <td><strong><center>No</center></strong></td>
+            <td><strong><center>Sifat Prisma Segienam</center></strong></td>
+            <td><strong><center>Bagian-bagian</center></strong></td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">1.</td>
+            <td bgcolor="lightblue">Prisma segienam memiliki 8 bidang atau sisi.</td>
+            <td bgcolor="lightblue">Sisi alas (ABCDEF), Sisi atas (GHIJKL), Sisi tegak (BCIH, CIJD, DJKE, EKLF, FLGA, GAHB).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">2.</td>
+            <td bgcolor="lightblue">Prisma segienam memiliki 18 rusuk.</td>
+            <td bgcolor="lightblue">Rusuk alas (AB, BC, CD, DE, EF, FA), Rusuk atas (GH, HI, IJ, JK, KL, LG), Rusuk tegak (AG, BH, CI, DJ, EK, FL).</td>
+          </tr>
+          <tr>
+            <td bgcolor="lightblue">3.</td>
+            <td bgcolor="lightblue">Prisma segienam memiliki 12 titik sudut.</td>
+            <td bgcolor="lightblue">A, B, C, D, E, F, G, H, I, J, K dan L.</td>
+          </tr>
+          </table>
+      </ol>
+    
+    <br>
+      <h3><strong>D. Luas Permukaan Prisma</strong></h3>
+      <ol>
+        <p>Luas permukaan prisma dapat ditentukan dengan menjumlahkan luas sisi-sisi tegak, luas alas dan luas bidang atas. Maka rumus luas permukaan prisma adalah L = (2 x luas alas) + (kelilig alas x tinggi).</p>
+        <p>
+          Luas Permukaan Prisma = (2 x luas alas) + (keliling alas x tinggi)
+        </p>
+      </ol>
+    
+    <br>
+      <h3><strong>E. Volume Prisma</strong></h3>
+      <ol>
+        <p>Volume prisma dapat ditentukan dengan membelah sebuah balok menjadi 2 bagian sama beasr melalui salah satu diagonal bidang sehingga membentuk dua prisma yang kongruen. Maka rumus volume prisma adalah V = luas alas x tinggi.</p>
+        <p>
+          Volume Prisma = luas alas x tinggi
+        </p>
+      </ol> 
+    
+    <br>
+      <h3><strong>F. Jaring-jaring Prisma</strong></h3>
+      <ol>
+        <p>Jaring-jaring prisma adalah susunan dari bidang sisi, bidang alas dan bidang atas dari suatu prisma</p>
+        <li>1. Jaring-jaring Prisma Segitiga</li>
+          <img src="https://i.postimg.cc/sX1NffhR/Jaring-jaring-Prisma-Segitiga.jpg" width ="345px" height="322px">
+          <br>
+        <li>2. Jaring-jaring Prisma Segiempat</li>
+          <img src="https://i.postimg.cc/cJFzNt6m/Jaring-jaring-Prisma-Segiempat.jpg" width ="240px" height="196px">
+          <br>
+        <li>3. Jaring-jaring Prisma Segilima</li>
+          <img src="https://i.postimg.cc/mgGJ3G0Q/Jaring-jaring-Prisma-Segilima.jpg" width ="250px" height="203px">
+          <br>
+        <li>4. Jaring-jaring Prisma Segienam</li>
+          <img src="https://i.postimg.cc/6qkLXtdz/Jaring-jaring-Prisma-Segienam.jpg" width ="360px" height="305px">
+      </ol>
+    
+    <br>
+      <h3><strong>G. Ringkasan Prisma</strong></h3>
+      <ol>
+        <p>Prisma adalah bangun ruang yang dibatasi oleh dua sisi berhadapan yang sejajar dan kongruen serta diselimuti oleh beberapa bidang tegak yang berbentuk persegi panjang. Nama dari prisma tergantung dari bentuk alas prisma.</p>
+        <br>
+        <li>1. Unsur-unsur Prisma segi n beraturan</li>
+        <ul>
+          <li>a. Memiliki (n + 2) buah sisi/bidang yaitu n buah sisi tegak yang berbentuk persegi panjang, sebuah sisi alas dan sebuah sisi atas yang berbentuk segi n yang kongruen. </li>
+          <li>b. Memiliki 2n buah titik sudut.</li>
+          <li>c. Memiliki 3n buah rusuk yaitu n buah rusuk alas, n buah rusuk atas dan n buah rusuk tinggi prisma.</li>
+        </ul>
+        <br>
+        <li>2. Rumus pada Prisma</li>
+        <ul>
+          <li>a. Luas permukaan = (2 x luas alas) + (keliling alas x tinggi)</li>
+          <li>b. Volume = luas alas x tinggi</li>
+        </ul>
+      </ol>
+    
+    <br>
+      <h3><strong>H. Latihan</strong></h3>
+      <ol>
+        <li>1. Sebuah prisma segitiga mempunyai panjang alas 25cm, tinggi 14cm. Jika tinggi prisma 22cm, maka volumenya adalah ... cm<sup>3</sup>.</li>
+        <br>
+        <li>2. Sebuah prisma alasnya berbentuk layang-layang dengan panjang diagonal 19cm dan 12cm. berapakah volume prisma jika tinggi prisma 11cm?</li>
+        <br>
+        <li>3. Diketahui volume prisma 450cm<sup>3</sup>. Alas prisma berbentuk siku-siku dengan panjang sisi 5cm, 13cm dan 12cm. berapakah tinggi prisma?</li>
+        <br>
+        <li>4. Sebuah prisma segi enam memiliki panjang sisi 8 cm dan tingginya 6 cm. berapa luas permukaan prisma segi enam tersebut.</li>
+        <br>
+        <li>5. Sebuah prisma memiliki alas yang berbentuk segi enam beraturan. Jika panjang sisi segi enam tersebut adalah 10 cm dan tingginya adalah 8 cm. berapa luas permukaan prisma segi enam tersebut?</li>
+      </ol>
+      </font> 
+      </section>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      </body>
+    </html>

@@ -1,0 +1,182 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNTIRTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+
+<body>
+    <!--bagian navbar-->
+    <nav class="navbar navbar-expand-lg" style="background-color:#4d3a26;">
+      <div class="container-fluid">
+        <img src="{% static 'logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'index' %} active {% endif %}" aria-current="page" href="{% url 'index' %}" style="color:	#FFFFFF">UNTIRTA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'home' %} active {% endif %}" href="{% url 'home' %}" style="color:	#FFFFFF">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Bangun Ruang Sisi Datar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kubus' %} active {% endif %}" href="{% url 'kubus' %}" style="color:	#000000">Kubus</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'balok' %} active {% endif %}" href="{% url 'balok' %}" style="color:	#000000">Balok</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'prisma' %} active {% endif %}" href="{% url 'prisma' %}" style="color:	#000000">Prisma</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'limas' %} active {% endif %}" href="{% url 'limas' %}" style="color:	#000000">Limas</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkubus' %} active {% endif %}" href="{% url 'appletkubus' %}" style="color:	#000000">Applet Kubus</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Kesebangunan dan Kekongruenan
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kesebangunan' %} active {% endif %}" href="{% url 'kesebangunan' %}" style="color:	#000000">Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'kekongruenan' %} active {% endif %}" href="{% url 'kekongruenan' %}" style="color:	#000000">Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikesebangunan' %} active {% endif %}" href="{% url 'aplikasikesebangunan' %}" style="color:	#000000">Aplikasi Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikekongruenan' %} active {% endif %}" href="{% url 'aplikasikekongruenan' %}" style="color:	#000000">Aplikasi Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkekongruenan' %} active {% endif %}" href="{% url 'appletkekongruenan' %}" style="color:	#000000">Applet Kekongruenan</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Transformasi Geometri
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'translasi' %} active {% endif %}" href="{% url 'translasi' %}" style="color:	#000000">Translasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'rotasi' %} active {% endif %}" href="{% url 'rotasi' %}" style="color:	#000000">Rotasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'refleksi' %} active {% endif %}" href="{% url 'refleksi' %}" style="color:	#000000">Refleksi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'dilatasi' %} active {% endif %}" href="{% url 'dilatasi' %}" style="color:	#000000">Dilatasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'applettranslasi' %} active {% endif %}" href="{% url 'applettranslasi' %}" style="color:	#000000">Applet Translasi</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Lingkaran
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'lingkaran' %} active {% endif %}" href="{% url 'lingkaran' %}" style="color:	#000000">Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaanlingkaran' %} active {% endif %}" href="{% url 'persamaanlingkaran' %}" style="color:	#000000">Persamaan Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaangarissinggung' %} active {% endif %}" href="{% url 'persamaangarissinggung' %}" style="color:	#000000">Persamaan Garis Singgung</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletlingkaran' %} active {% endif %}" href="{% url 'appletlingkaran' %}" style="color:	#000000">Applet Lingkaran</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'about' %} active {% endif %}" href="{% url 'about' %}" style="color:#FFFFFF"">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'mahasiswa' %} active {% endif %}" href="{% url 'mahasiswa' %}" style="color:	#FFFFFF">Data Mahasiswa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!--penutup navbar-->
+
+      <link rel="stylesheet" href="{% static 'css/body.css' %}">
+
+      <br></br>
+        
+      <section class="container">
+
+        <center>  
+          <font size="8"><strong>BAB I</strong></font>
+          <br>
+          <h2><strong>TRANSLASI</strong></h2>
+          <br>
+          <iframe style="width: 500px;height: 300px;"type="text/html" src="https://www.youtube.com/embed/iojzS-0DI_g?autoplay=1&origin=wibloog.com" frameborder="5"></iframe>
+        </center>
+          </br> 
+            <h3><strong>A. URAIAN MATERI</strong></h3>
+              <p>Pernahkan kalian mengamati objek atau benda-benda yang bergerak di sekitar kalian? seperti kendaraaan yang berjalan di jalan raya, pesawat yang melintas di udara, eskalator yang bergerak atau diri kita sendiri yang bergerak kemana saja. Kegiatan tersebut menyebabkan benda atau objek mengalami perubahan posisi tanpa mengubah bentuk dan ukuran. Yuk kita memahami konsep translasi dengan menyelesaikan Masalah 1.1.</p>
+            <center>
+            <img src="https://i.postimg.cc/ZRnNVSjf/Masalah-1.jpg">
+            </center>
+              <p>Untuk mempermudah memahami konsep translasi kita bisa menggunakan pendekatan bidang Cartesius. Kita dapat mengasumsikan untuk pergeseran ke kanan pada bidang cartesius merupakan sumbu X positif, pergeseran ke kiri merupakan sumbu X negatif, pergeseran ke atas merupakan sumbu Y positif dan pergeseran ke bawah merupakan sumbu Y negatif.</p>
+              <p>Jika Masalah 1.1 kita sajikan dalam bidang Cartesius maka diperoleh gambar 3. Yuk perhatikan gambar 3!</p>
+              <br>
+            <center>
+            <img src="https://i.postimg.cc/3xnfR2Sz/Pergerakan-Ayu-dari-Rumah-ke-Sekolah-pada-bidang-Cartesius.jpg">
+              <br>
+            </center>
+            <center><font size="2">Sumber: Buku ajar matematika kelas 11</font></center>
+              <br>
+              <p>Jika kita melihat posisi rumah Ayu pada bidang Cartesius berada pada koordinat (3, 2). Untuk menuju ke sekolah Ayu harus berjalan ke arah barat 7 satuan artinya posisi Ayu bergeser 7 satuan ke kiri dari posisi rumah pada bidang Cartesius. Selanjutnya Ayu harus berjalan lagi ke arah selatan 5 satuan artinya posisi Ayu bergeser 5 satuan ke bawah. Jika kita melihat pada bidang Cartesius pada saat tiba di sekolah posisi Ayu berada pada koordinat (-4, -3). Hal ini berarti:</p>
+              <img src="https://i.postimg.cc/kXt7Wg3j/ss.jpg">
+              <p>Jadi, posisi Ayu di sekolah terletak pada koordinat (-4, -3).</p>
+            
+              <P>Untuk mempermudah kita memahami perpindahan lukisan yang terjadi, kita bisa memisalkan lukisan tersebut sebagai persegi panjang ABCD dan hasil perpindahan lukisan kita misalkan sebagai persegi panjang A’B’C’D’. Agar mudah memahami yuk kita perhatikan gambar 5.</P>
+                <br>
+              <center>
+              <img src="https://i.postimg.cc/MTRTvQN7/alya.png" width ="350px" height="200px">
+              </center>
+                <br>
+              <p>Jika kita perhatikan persegi panjang A’B’C’D’ merupakan bayangan dari persegi panjang ABCD setelah ditranslasi. Dari hasil translasi tersebut diperoleh 𝐴𝐴 ′ = 𝐵𝐵 ′ = 𝐶𝐶 ′ = DD`</p>
+                <br>
+              <p><strong>Pergeseran 1:</strong></p> 
+              <p>Posisi awal titik 𝐴 adalah 𝐴(-7, 1), kemudian bergerak ke kanan sejauh 8 satuan dan ke atas sejauh 3 satuan sehingga posisi berubah di koordinat 𝐴 ′ (1, 4)</p>
+              <p>Hal ini berarti:</p>
+              <img src="https://i.postimg.cc/Y0k0Mzws/Pergeseran-1.jpg">
+                <br>
+              <p><strong>Pergeseran 2:</strong></p> 
+              <p>Posisi awal titik 𝐵 adalah 𝐵(-2, 1), kemudian bergerak ke kanan sejauh 8 satuan dan ke atas sejauh 3 satuan sehingga posisi berubah di koordinat 𝐵 ′ (6, 4)</p>
+              <p>Hal ini berarti:</p>
+              <img src="https://i.postimg.cc/zXzvQ77L/Pergeseran-2.jpg">
+                <br>
+              <p><strong>Pergeseran 3:</strong></p> 
+              <p>Posisi awal titik 𝐶 adalah 𝐶(−2, 4), kemudian bergerak ke kanan sejauh 8 satuan dan ke atas sejauh 3 satuan sehingga posisi berubah di koordinat 𝐶′(6, 7)</p>
+              <p>Hal ini berarti:</p>
+              <img src="https://i.postimg.cc/y8Wd1Nws/Pergeseran-3.jpg">
+                <br>
+              <p><strong>Pergeseran 4:</strong></p> 
+              <p>Posisi awal titik 𝐷 adalah 𝐷(−2, 4), kemudian bergerak ke kanan sejauh 8 satuan dan ke atas sejauh 3 satuan sehingga posisi berubah di koordinat 𝐷′ (1, 7)</p>
+              <p>Hal ini berarti:</p>
+              <img src="https://i.postimg.cc/MGQpBF6L/Pergeseran-4.jpg">
+        
+              <p>Pergeseran setiap titik pada uraian di atas dapat disajikan secara lebih sederhana dalam Tabel 1.</p>
+              <center>
+                <br>
+                <img src="https://i.postimg.cc/28gpW81z/Tabel-1.jpg">
+              </center>
+              <center><font size="2">Tabel: Translasi Titik</font></center>
+              </br>
+        </section>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      </body>
+    </html>

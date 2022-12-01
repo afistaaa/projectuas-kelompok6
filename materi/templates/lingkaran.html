@@ -1,0 +1,219 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNTIRTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+
+<body>
+    <!--bagian navbar-->
+    <nav class="navbar navbar-expand-lg" style="background-color:#4d3a26;">
+      <div class="container-fluid">
+        <img src="{% static 'logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'index' %} active {% endif %}" aria-current="page" href="{% url 'index' %}" style="color:	#FFFFFF">UNTIRTA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'home' %} active {% endif %}" href="{% url 'home' %}" style="color:	#FFFFFF">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Bangun Ruang Sisi Datar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kubus' %} active {% endif %}" href="{% url 'kubus' %}" style="color:	#000000">Kubus</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'balok' %} active {% endif %}" href="{% url 'balok' %}" style="color:	#000000">Balok</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'prisma' %} active {% endif %}" href="{% url 'prisma' %}" style="color:	#000000">Prisma</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'limas' %} active {% endif %}" href="{% url 'limas' %}" style="color:	#000000">Limas</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkubus' %} active {% endif %}" href="{% url 'appletkubus' %}" style="color:	#000000">Applet Kubus</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Kesebangunan dan Kekongruenan
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kesebangunan' %} active {% endif %}" href="{% url 'kesebangunan' %}" style="color:	#000000">Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'kekongruenan' %} active {% endif %}" href="{% url 'kekongruenan' %}" style="color:	#000000">Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikesebangunan' %} active {% endif %}" href="{% url 'aplikasikesebangunan' %}" style="color:	#000000">Aplikasi Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikekongruenan' %} active {% endif %}" href="{% url 'aplikasikekongruenan' %}" style="color:	#000000">Aplikasi Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkekongruenan' %} active {% endif %}" href="{% url 'appletkekongruenan' %}" style="color:	#000000">Applet Kekongruenan</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Transformasi Geometri
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'translasi' %} active {% endif %}" href="{% url 'translasi' %}" style="color:	#000000">Translasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'rotasi' %} active {% endif %}" href="{% url 'rotasi' %}" style="color:	#000000">Rotasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'refleksi' %} active {% endif %}" href="{% url 'refleksi' %}" style="color:	#000000">Refleksi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'dilatasi' %} active {% endif %}" href="{% url 'dilatasi' %}" style="color:	#000000">Dilatasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'applettranslasi' %} active {% endif %}" href="{% url 'applettranslasi' %}" style="color:	#000000">Applet Translasi</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Lingkaran
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'lingkaran' %} active {% endif %}" href="{% url 'lingkaran' %}" style="color:	#000000">Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaanlingkaran' %} active {% endif %}" href="{% url 'persamaanlingkaran' %}" style="color:	#000000">Persamaan Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaangarissinggung' %} active {% endif %}" href="{% url 'persamaangarissinggung' %}" style="color:	#000000">Persamaan Garis Singgung</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletlingkaran' %} active {% endif %}" href="{% url 'appletlingkaran' %}" style="color:	#000000">Applet Lingkaran</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'about' %} active {% endif %}" href="{% url 'about' %}" style="color:#FFFFFF"">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'mahasiswa' %} active {% endif %}" href="{% url 'mahasiswa' %}" style="color:	#FFFFFF">Data Mahasiswa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!--penutup navbar-->
+
+      <link rel="stylesheet" href="{% static 'css/body.css' %}">
+
+      <br></br>
+      <section class="container">
+      <h1 style="text-align: center;">LINGKARAN</h1>
+      <br></br>
+    
+      </center>
+      <h2>A. Pengertian Lingkaran</h2>
+      <p>Lingkaran adalah kedudukan titik-titik yang jaraknya sama terhadap titik tertentu. Yang dimaksud dengan titik tertentu di sini ialah titik pusat, sedangkan jaraknya sama di sini maksudnya ialah jari-jari lingkaran.</p>
+      <p>Dalam pengertian yang lainnya, dapat dinyatakan bahwa lingkaran adalah sebuah garis berbentuk lengkung yang kedua ujungnya saling bertemu satu sama lain, sedangkan semua titik sama jauh letaknya dari sebuah titik tertentu. Titik ini dinamakan dengan pusat lingkaran, jarak dari suatu titik pada lingkaran ke titik pusat dinamakan dengan jari-jari lingkaran, dan garis lengkung yang keduanya ujungnya bertemu itu dinamakan keliling lingkaran. Sedangkan daerah yang dibatasi oleh lingkaran disebut dengan bidang lingkaran (Putri, 2015).</p>
+      <p>Lingkaran merupakan salah satu kurva tutup sederhana yang membagi bidang menjadi dua bagian, yaitu bagian dalam dan bagian luar lingkaran. Lingkaran menjadi salah satu bangun datar yang tidak memiliki siku-siku.</p>
+      <p>Ciri-ciri lingkaran ialah memiliki diameter yang membaginya menjadi dua sisi seimbang dan memiliki jumlah sudut sebesar 180 derajat. Selain itu, diameter konstan dan jari-jari yang menghubungkan titik pusat dengan titik busur lingkaran juga menjadi ciri-ciri dari sebuah lingkaran.</p>
+    
+      <h2>B. Unsur-Unsur Lingkaran</h2>
+        <center>
+      <iframe style="width: 800px;height: 450px;"type="text/html" src="https://www.youtube.com/embed/XgxELiT8kCY?autoplay=1&origin=wibloog.com" frameborder="5"></iframe></center>
+    
+      <p>Sebuah lingkaran dibangun oleh unsur-unsur diantaranya sebagai berikut.</p>
+        <center><img src="https://i.postimg.cc/bNb1ZZYy/image009.png"></center>
+        <center><p>Gambar 1. Unsur-Unsur Lingkaran</p></center>
+    
+        <ol>
+        <li>Titik Pusat</li>
+        <p>Titik pusat adalah titik yang berada di tengah-tengah lingkaran. Nama lingkaran biasanya sesuai dengan titik pusatnya dan biasanya dilambangkan dengan huruf kapital, misalnya A, M, P, dan O. Pada Gambar 1, contoh bentuk lingkaran dengan pusat titik O, maka bisa disebut dengan lingkaran O.</p>
+        <br>
+    
+        <li>Jari-Jari</li>
+        <p>Jari-jari lingkaran adalah jarak suatu titik seberang terhadap titik pusatnya, biasanya disimbolkan dengan huruf r.<p/>
+        <br>
+    
+        <li>Diameter</li>
+        <p>Diameter adalah suatu garis yang menghubungkan antara titik seberang dengan titik seberang yang lainnya pada lingkaran dimana garis tersebut melalui titik pusat. Biasanya diameter disimbolkan dengan huruf d. Akan tetapi pada Gambar 1, diameternya adalah AD. Dapat dilihat bahwa AD = AO + OD. Karena AO dan OD merupakan jari-jari, maka dapat disimpulkan bahwa panjang diameter merupakan dua kali panjang jari-jari atau dapat ditulis d = 2r.</p>
+        <br>
+    
+      <li>Busur</li>
+      <p>Busur lingkaran merupakan garis lengkung pada sisi lingkaran yang menghubungkan dua titik sebarang dilengkungan tersebut. Pada Gambar 1, yang merupakan busur lingkaran ialah garis lengkung CEB.</p>
+      <br>
+    
+      <li>Tali Busur</li>
+      <p>Tali busur lingkaran adalah garis lurus dalam lingkaran yang menghubungkan dua titik pada lengkungan lingkaran, tetapi tidak melewati titik pusat lingkaran. Pada Gambar 1, tali busurnya adalah AF.</p>
+      <br>
+    
+      <li>Tembereng</li>
+      <p>Tembereng lingkaran merupakan luas daerah dalam lingkaran yang dibatasi oleh busur dan tali busur. Pada Gambar 1, tembereng merupakan daerah yang diraster yang dibatasi oleh busur AF dan tali busur AF.</p>
+      <br>
+    
+      <li>Juring</li>
+      <p>Juring lingkaran merupakan daerah yang dibatasi oleh dua jari-jari dan sebuah busur yang diapit oleh kedua jari-jari lingkaran tersebut. Juring lingkaran pada Gambar 1 adalah daerah yang dibatasi oleh jari-jari OF dan OD serta busur FD.</p>
+      <br>
+    
+      <li>Apotema</li>
+      <p>Apotema lingkaran merupakan garis yang menghubungkan titik pusat lingkaran dengan tali busur lingkaran. Garis tersebut tegak lurus dengan tali busur. Pada Gambar 1, apotema lingkarannya ialah .</p>
+        <br> </ol>
+    
+        <h2>C. Sifat-Sifat Lingkaran</h2>
+      <center>
+        <img src="https://i.postimg.cc/8Cd994Lf/image024.png"></center>
+        <center><p>Gambar 2. Sifat-Sifat Lingkaran</p></center>
+    
+        <p>Dari gambar lingkaran di atas, dapat kita ketahui bahwa:</p>
+        <ol>
+          <li>A merupakan pusat lingkaran.</li>
+          <li>AB = AC = AD = AE = AF = AG merupakan jari-jari lingkaran.</li>
+          <li>BC = DE = FG merupakan diameter atau garis tengah lingkaran, panjangnya dua kali jari-jari.</li>
+        </ol>
+    
+        <p>Dari pernyataan di atas, maka dapat kita ketahui bahwasanya:
+          <ol>
+            <li>Memiliki satu titik pusat.</li>
+            <li>Memiliki jari-jari yang panjangnya setengah dari diameter (d = 2r).</li>
+            <li>Jumlah sudutnya 3600.</li>
+            <li>Mempunyai simetri lipat dan simetri putar yang tak terhingga banyaknya.</li>
+            <li>Mempunyai sumbu simetri yang tak terhingga banyaknya.</li>
+          </ol>
+        </p>
+     
+        <h2>D. Keliling Lingkaran</h2>
+        <p>Keliling lingkaran merupakan panjang seluruh sisi lingkaran yang berupa garis lengkung. Menghitung keliling lingkaran dapat menggunakan dua cara, yaitu jika yang diketahui jari-jari (r) atau jika yang diketahui diameter (d).</p>
+    
+        <ol>
+            <table border="3" cellpadding="10">
+            <tr bgcolor="dodgerblue">
+              <td><strong><center>Jika yang diketahui jari-jari</center></strong></td>
+              <td><strong><center>Jika yang diketahui diameter</center></strong></td>
+            </tr>
+            <tr>
+              <td bgcolor="lightblue">2 x phi x r</td>
+              <td bgcolor="lightblue">phi x d</td>
+            </tr>
+          </table>
+          </ol>
+    
+          <p>Keterangan:</p>
+          <ol>
+            <li>K = Keliling lingkaran</li>
+            <li>r = Jari-jari lingkaran</li>
+            <li>d = Diameter lingkaran</li>
+            <li>phi = 3.14 atau 22/7</li>
+          </ol>
+    
+          <h2>E. Luas Lingkaran</h2>
+          <p>Luas lingkaran merupakan luasan daerah lingkaran. Luas lingkaran dirumuskan sebagai berikut.</p>
+          <p>Luas lingkaran (L) = phi x r x r</p>
+      </section>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      </body>
+    </html>

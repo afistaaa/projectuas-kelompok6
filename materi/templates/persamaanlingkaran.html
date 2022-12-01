@@ -1,0 +1,229 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNTIRTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+
+<body>
+    <!--bagian navbar-->
+    <nav class="navbar navbar-expand-lg" style="background-color:#4d3a26;">
+      <div class="container-fluid">
+        <img src="{% static 'logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'index' %} active {% endif %}" aria-current="page" href="{% url 'index' %}" style="color:	#FFFFFF">UNTIRTA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'home' %} active {% endif %}" href="{% url 'home' %}" style="color:	#FFFFFF">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Bangun Ruang Sisi Datar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kubus' %} active {% endif %}" href="{% url 'kubus' %}" style="color:	#000000">Kubus</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'balok' %} active {% endif %}" href="{% url 'balok' %}" style="color:	#000000">Balok</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'prisma' %} active {% endif %}" href="{% url 'prisma' %}" style="color:	#000000">Prisma</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'limas' %} active {% endif %}" href="{% url 'limas' %}" style="color:	#000000">Limas</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkubus' %} active {% endif %}" href="{% url 'appletkubus' %}" style="color:	#000000">Applet Kubus</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Kesebangunan dan Kekongruenan
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'kesebangunan' %} active {% endif %}" href="{% url 'kesebangunan' %}" style="color:	#000000">Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'kekongruenan' %} active {% endif %}" href="{% url 'kekongruenan' %}" style="color:	#000000">Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikesebangunan' %} active {% endif %}" href="{% url 'aplikasikesebangunan' %}" style="color:	#000000">Aplikasi Kesebangunan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'aplikasikekongruenan' %} active {% endif %}" href="{% url 'aplikasikekongruenan' %}" style="color:	#000000">Aplikasi Kekongruenan</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletkekongruenan' %} active {% endif %}" href="{% url 'appletkekongruenan' %}" style="color:	#000000">Applet Kekongruenan</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Transformasi Geometri
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'translasi' %} active {% endif %}" href="{% url 'translasi' %}" style="color:	#000000">Translasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'rotasi' %} active {% endif %}" href="{% url 'rotasi' %}" style="color:	#000000">Rotasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'refleksi' %} active {% endif %}" href="{% url 'refleksi' %}" style="color:	#000000">Refleksi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'dilatasi' %} active {% endif %}" href="{% url 'dilatasi' %}" style="color:	#000000">Dilatasi</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'applettranslasi' %} active {% endif %}" href="{% url 'applettranslasi' %}" style="color:	#000000">Applet Translasi</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:	#FFFFFF">
+                Lingkaran
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#a57c50;">
+                <li><a class="dropdown-item {% if dropdown == 'lingkaran' %} active {% endif %}" href="{% url 'lingkaran' %}" style="color:	#000000">Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaanlingkaran' %} active {% endif %}" href="{% url 'persamaanlingkaran' %}" style="color:	#000000">Persamaan Lingkaran</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'persamaangarissinggung' %} active {% endif %}" href="{% url 'persamaangarissinggung' %}" style="color:	#000000">Persamaan Garis Singgung</a></li>
+
+                <li><a class="dropdown-item {% if dropdown == 'appletlingkaran' %} active {% endif %}" href="{% url 'appletlingkaran' %}" style="color:	#000000">Applet Lingkaran</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'about' %} active {% endif %}" href="{% url 'about' %}" style="color:#FFFFFF"">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if navbar == 'mahasiswa' %} active {% endif %}" href="{% url 'mahasiswa' %}" style="color:	#FFFFFF">Data Mahasiswa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!--penutup navbar-->
+
+      <link rel="stylesheet" href="{% static 'css/body.css' %}">
+
+      <br></br>
+  <section class="container">
+  <h1 style="text-align: center;">PERSAMAAN LINGKARAN</h1>
+  <br></br>
+
+  </center>
+  <p>Setelah kita mengetahui pengertian, unsur, sifat, serta rumus dari lingkaran kita akan mempelajari tentang persamaan lingkaran. Materi persamaan bukan hanya terdapat pada persamaan linear dua variabel (SPLDV) saja, tetapi juga terdapat pada materi lingkaran. Coba kalian bayangkan sebuah lingkaran ditempatkan pada bidang kartesius. Tentu lingkaran tersebut membutuhkan lokasi koordinat khusus yang menempatkan lingkaran pada posisi dan ukuran yang tepat. Maka dari itu dibuatlah persamaan lingkaran, yaitu kumpulan koordinat () yang berjarak sama terhadap titik pusat lingkaran.</p>
+
+<center>
+	<iframe style="width: 800px;height: 450px;"type="text/html" src="https://www.youtube.com/embed/A1EVg6s0NDg?autoplay=1&origin=wibloog.com" frameborder="5"></iframe>
+</center>
+<br>
+
+<h2>A. Persamaan Lingkaran yang Berpusat Di Titik O(0,0) Dan Berjari-Jari r</h2>
+<p>Perhatikan Gambar 3 berikut.</p>
+	<center>
+		<img src="https://i.postimg.cc/8Cd994Lf/image024.png"></center>
+  	<center><p>Gambar 3. Persamaan Lingkaran yang Berpusat Di Titik O(0,0) Dan Berjari-Jari r</p></center><br>
+
+  	<p>Pada gambar tersebut menunjukkan lingkaran yang berpusat O(0,0) dan berjari-jari r. Misalkan, A merupakan titik seberang yang berada pada lingkaran. Jika dari titik A ditarik garis tegak lurus sumbu-x sehingga akan berpotongan di titik A', maka akan terbentuk segitiga siku-siku OA'A. Menurut teorema Phytagoras, <img src="https://i.postimg.cc/NfZjkz5B/image088.png" width ="20px" height="20px">.</p>
+
+	<p>Oleh karena  OA = r, OA' = x, dan A'A = y maka bentuk dari <img src="https://i.postimg.cc/7Y5L7kPK/image091.png"> dapat ditulis <img src="https://i.postimg.cc/kGpXZjsN/image092.png">.</p>
+
+	<p>Dari uraian di atas, dapat diperoleh bahwa untuk sebarang titik A(x,y) yang terletak pada lingkaran yang berpusat di titik (0, 0) dengan jari-jari r berlaku persamaan lingkaran sebagai berikut.</p>
+	<center>
+		<img src="https://i.postimg.cc/KcqzRzbK/image093.png"></center>
+		<br>
+
+	<h2>B. Persamaan Lingkaran yang Berpusat Di Titik P(a,b) Dan Berjari-Jari r</h2>
+	<p>Perhatikan Gambar 4 berikut.</p>
+	<center>
+		<img src="https://i.postimg.cc/dVdtHjyd/image096.jpg"></center>
+  	<center><p>Gambar 4. Persamaan Lingkaran yang Berpusat Di Titik P(a,b) Dan Berjari-Jari r</p></center><br>
+
+  	<p>Pada gambar tersebut menunjukkan lingkaran yang berpusat P(a,b) dan berjari-jari r. Misalkan, P merupakan titik seberang yang berada pada lingkaran. Jika dari titik P ditarik garis tegak lurus y = b sehingga akan berpotongan di titik P', maka akan terbentuk segitiga siku-siku AP'P. Menurut teorema Phytagoras, <img src="https://i.postimg.cc/bv9Y8YLw/image102.png">.
+
+	<p>Oleh karena <img src="https://i.postimg.cc/gJcz09Bq/image103.png"> dan P'P = y - b maka bentuk dari <img src="https://i.postimg.cc/bv9Y8YLw/image102.png"> dapat ditulis <img src="https://i.postimg.cc/RVh6vY3z/image106.png">.</p>
+
+	<p>Jadi, untuk sebarang titik P(x,y) yang terletak pada lingkaran yang berpusat di P(a,b) dan berjari-jari r, persamaan lingkarannya sebagai berikut.</p>
+	<center><img src="https://i.postimg.cc/x1bXzbyx/image108.png"></center>
+	<br>
+
+	<h2>C. Bentuk Umum Persamaan Lingkaran</h2>
+	<p>Pada bagian sebelumnya, kita sudah mengetahui bentuk baku persamaan lingkaran, yaitu <img src="https://i.postimg.cc/YqP40xgL/image109.png"></center>. Jika bentuk baku tersebut diuraikan, maka hasilnya sebagai berikut.</p>
+
+	<p><img src="https://i.postimg.cc/YqP40xgL/image109.png"></p>
+	<p><img src="https://i.postimg.cc/FKy1P560/image110.png"></p>
+	<p><img src="https://i.postimg.cc/cJyrM4Fs/image111.png"></p>
+
+	<p>Misalkan, <img src="https://i.postimg.cc/kGXV61fK/image112.png">, dan <img src="https://i.postimg.cc/3NSkgXc6/image113.png"> maka akan diperoleh bentuk <img src="https://i.postimg.cc/TwT1FN8F/image114.png">.</p>
+
+	<p>Dari uraian di atas, diperoleh bentuk umum persamaan lingkaran yang berpusat di p(a,b) dan berjari-jari r sebagai berikut.</p>
+
+	<center><p><img src="https://i.postimg.cc/TwQ16jfw/image115.png"></p></center>
+
+	<p>Jika bentuk umum persamaan lingkaran tersebut diubah ke dalam bentuk kuadrat sempurna, maka diperoleh:</p>
+
+	<p><img src="https://i.postimg.cc/TwT1FN8F/image114.png"></p>
+	<p><img src="https://i.postimg.cc/Vv66LSkF/image116.png"></p>
+	<p><img src="https://i.postimg.cc/3rSNfZtf/image117.png"></p>
+	<p><img src="https://i.postimg.cc/vTNm1Q1w/image118.png"></p>
+	<p><img src="https://i.postimg.cc/xTBCn1DK/image119.png"></p>
+
+	<p>Sekarang coba kalian perhatikan bentuk akhir uraian di atas. Jika kita amati, bentuk tersebut menyerupai bentuk baku persamaan lingkaran dengan:</p>
+
+	<center><p><img src="https://i.postimg.cc/K8LYzhxC/image120.png"></p></center>
+	<br>
+
+	<h2>D. Posisi Titik Terhadap Lingkaran</h2>
+	<center>
+	<iframe style="width: 800px;height: 450px;"type="text/html" src="https://www.youtube.com/embed/UkcVkfMUU6w?autoplay=1&origin=wibloog.comUkcVkfMUU6w" frameborder="5"></iframe>
+	</center><br>
+	<p>Berikut merupakan syarat untuk posisi titik terhadap lingkaran dengan pusat O(0,0) dan berjari-jari r:</p>
+  	<ol>
+  		<li>Jika <img src="https://i.postimg.cc/SRJSbwgT/image123.png"> maka <img src="https://i.postimg.cc/Y9XrVpzL/image124.png"> terletak di dalam lingkaran.</li>
+  		<li>Jika <img src="https://i.postimg.cc/pr42Wq72/image125.png"> maka <img src="https://i.postimg.cc/2j4z2Qgk/image126.png"> terletak pada lingkaran.</li>
+  		<li>Jika <img src="https://i.postimg.cc/HkLdYfnn/image127.png"> maka <img src="https://i.postimg.cc/W4Bv7znq/image128.png"> terletak di luar lingkaran.</li>
+  	</ol>
+
+  	<br>
+  	<p>Berikut merupakan syarat untuk posisi lingkaran dengan pusat P(a,b) dan berjari-jari r:</p>
+  	<ol>
+  		<li>Jika <img src="https://i.postimg.cc/28rCJqf4/image129.png"> maka <img src="https://i.postimg.cc/W4Bv7znq/image128.png"> terletak di dalam lingkaran.</li>
+  		<li>Jika <img src="https://i.postimg.cc/Px1kVH33/image130.png"> maka <img src="https://i.postimg.cc/W4Bv7znq/image128.png"> terletak pada lingkaran.</li>
+  		<li>Jika <img src="https://i.postimg.cc/9QNVrJwp/image131.png"> maka <img src="https://i.postimg.cc/W4Bv7znq/image128.png"> terletak di luar lingkaran.</li>
+  	</ol>
+  	<br>
+
+	<h2>E. Posisi Garis Terhadap Lingkaran</h2>
+	<p>Setelah mempelajari macam-macam posisi titik terhadap suatu lingkaran, selanjutnya kita akan mempelajari macam-macam posisi garis terhadap lingkaran.</p>
+
+	<p>Misalkan, diketahui garis g:y=ax+b dan lingkaran M dengan persamaan <img src="https://i.postimg.cc/ZKbhH1rH/image134.png">. Bagaimana posisi garis g terhadap lingkaran M? Untuk mengetahuinya, mari kita lakukan langkah-langkah berikut.</p>
+
+	<br><p>Langkah Ke-1</p>
+	<p>Pertama, subtitusikan persamaan garis g ke persamaan lingkaran M.</p>
+
+	<p><img src="https://i.postimg.cc/TwT1FN8F/image114.png"></p>
+	<p><img src="https://i.postimg.cc/gjDbdDP3/image136.png"></p>
+	<p><img src="https://i.postimg.cc/NfdvzpDc/image137.png"></p>
+	<p><img src="https://i.postimg.cc/pLyMbzcn/image138.png"></p>
+	<br>
+	<p>Misalkan, <img src="https://i.postimg.cc/wjP86Mn4/image139.png">, dan <img src="https://i.postimg.cc/JhkwtmLr/image140.png"> maka diperoleh persamaan <img src="https://i.postimg.cc/ZRtGdgbr/image141.png">.</p> 
+
+	<br>
+
+	<br><p>Langkah Ke-2</p>
+	<p>Menentukan nilai diskriminannya, yaitu <img src="https://i.postimg.cc/RF7jQRh2/image142.png">.</p>
+	<ol>
+  		<li>Jika D > 0 maka garis g memotong lingkaran M di dua titik.</li>
+  		<li>Jika D = 0 maka garis g menyinggung lingkaran M.</li>
+  		<li>Jika D > 0 maka garis g tidak memotong dan menyunggung lingkaran M di dua titik.</li>
+  	</ol>
+	<br>
+</section>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      </body>
+    </html>
